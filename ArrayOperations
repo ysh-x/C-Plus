@@ -1,0 +1,71 @@
+#include<iostream>
+
+using namespace std;
+class Array {
+
+     public:
+     void insert(double arr[], int size) {
+          for(int i = 0; i< size; i++) {
+               cin >> arr[i];
+               cout << "Element "<<arr[i] <<" Inserted Successfully\n";
+          }
+     }
+
+     void dispElement(double arr[], int index) {
+          cout << "The Requested Element -> " << cout << arr[index];
+     }
+
+     int search(double arr[], int size,double element ) {
+          int count = -1;
+          cout << "Requested Element: \n" << element;
+          
+          for(int i = 0; i < 4; i++) {
+                   if (arr[i] == element) {
+                         count = i;
+                    }
+                    else {
+                         count = -1;
+                    }
+          }
+
+          return count;
+     }
+     void displayArray(double arr[], int size) {
+          for(int i = 0; i < size; i++) {
+               cout << arr[i] << " -> ";
+          }
+          cout << "\n";
+     }
+
+    
+
+
+}A;
+
+int main() {
+
+     double array[30];
+     cout << "Number of Elements: ";
+     int size;
+     cin >> size;
+
+     cout << "Insert your Elements One - By - One ";
+     A.insert(array,size);
+     cout << "Displaying the Elements :\n";
+     A.displayArray(array,size);
+     cout << "Number of Element to search: ";
+
+     double element;
+     cin >> element;
+
+     int index =  A.search(array,size,element);
+     if(index==-1) {
+          cout << "Element Not Found";
+     }
+     else {
+          cout << "The Requested Element Was Found @ " << index+1 << " Position";
+     }
+
+
+     return 0;
+}
